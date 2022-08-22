@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for employee bean using constructor dependency -->
+   <bean id = "employeeData" class = "webapp.Springcore.Employee">
+      <constructor-arg index="0" value="1"/>
+      <constructor-arg index="1" value="abhi"/>
+   </bean>
+   
+   <bean id="employeeDataSetter" class="webapp.Springcore.Employee">
+	  <!-- setter injection using the neater 'ref' attribute -->
+	  <property name="id"  value="2"  />
+	  <property name="name" value="singh"/>
+    </bean>
+    
+    <bean id="employeeList" class="webapp.Springcore.Employee">
+	  <!-- setter injection using the neater 'ref' attribute -->
+	  <property name="id"  value="2"  />
+	  <property name="name" value="singh"/>
+	  <property name="add" >
+	  <list>
+		  <value>India</value>
+		  <value>USA</value>
+		  <value>Canada</value>
+	  </list>
+	  </property>
+   
+    
+    
+	  <!-- setter injection using the neater 'ref' attribute -->
+	  <property name="con" >
+	  <set>
+		  <value>123</value>
+		  <value>456</value>
+		  <value>789</value>
+	  </set>
+	  </property>
+    </bean>
+   
+   
+</beans>

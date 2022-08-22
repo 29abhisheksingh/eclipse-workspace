@@ -29,7 +29,7 @@ public class HomeController {
 		 
 		
 		
-		/*map.forEach((k,v)->System.out.println("key "+k +" value "+v));*/
+		map.forEach((k,v)->System.out.println("key "+k +" value "+v));
 		System.out.println("hello Controller get");
 		ModelAndView modelAndView=new ModelAndView("/home");
 		String name="ravinder";
