@@ -1,64 +1,52 @@
-package com.globalogic.Bookstore.entity;
-
-
-
-
-import java.util.List;
+package com.globallogic.book.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
-public class Bookstore {
+public class Book {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	
+	long id;
+
 	@Column
 	String title;
-	
+
 	@Column
 	String author;
-	
+
 	@Column
 	String subject;
 	
-	@ManyToOne
-	List<Bookcat> book;
+	@Column
+	double price;
 
-	public Bookstore(int id, String title, String author, String subject, List<Bookcat> book) {
+	public Book(long id, String title, String author, String subject, double price) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.subject = subject;
-		this.book = book;
+		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Bookstore [id=" + id + ", title=" + title + ", author=" + author + ", subject=" + subject + ", book="
-				+ book + "]";
-	}
-
-	public Bookstore() {
+	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -86,12 +74,18 @@ public class Bookstore {
 		this.subject = subject;
 	}
 
-	public List<Bookcat> getBook() {
-		return book;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setBook(List<Bookcat> book) {
-		this.book = book;
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", subject=" + subject + ", price="
+				+ price + "]";
 	}
 	
 	

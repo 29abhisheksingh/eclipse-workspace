@@ -74,6 +74,11 @@ public class Signup {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "Signup [id=" + id + ", email=" + email + ", password=" + password + ", b2=" + b2 + "]";
+	}
 	
 	
 
